@@ -1,0 +1,33 @@
+<template name="sellStockConfirm">
+
+    <form class="create" autocomplete="off">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Sell {{name}}</legend>
+            <span class="starting-cash">Cash: {{startingCash}}</span>
+
+            <div class="form-group">
+                <div class="space-between-inputs">
+                    <label for="group">Current Price Per Stock:</label>
+                    <input id="price-text" value="{{price}}" name="price" type="number" class="form-control" readonly>
+                </div>
+                <div class="space-between-inputs">
+                    <label for="group">Available Stocks:</label>
+                    <input id="price-text" value="{{avAmount}}" name="avAmount" type="number" class="form-control" readonly>
+                </div>
+                <div class="space-between-inputs">
+                    <label for="group">Stocks To Sell:</label>
+                    <input id="amount-text" name="amount" type="number" class="form-control" min="1" max="{{avAmount}}" pattern="[0-9]*">
+                    <span id="x-error-icon" class="glyphicon glyphicon-remove form-control-feedback sell-stock"></span>
+                    <span id="error-msg" class="error-msg sell-stock"></span>
+                </div>
+                <div class="space-between-inputs">
+                    <label for="group">Value:</label>
+                    <input id="value-text" name="value" type="number" value="{{value}}" class="form-control" readonly>
+                </div>
+            </div>
+            <button id="sell-stock-btn" type="submit" class="btn btn-success sell">Sell</button>
+        </fieldset>
+    </form>
+
+
+</template>

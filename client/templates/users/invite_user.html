@@ -1,0 +1,19 @@
+<template name="inviteUser">
+    <form class="invite-user" autocomplete="off">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Invite to {{ sprint.name }}</legend>
+            <div class="form-group">
+                <input id="user_name" class="form-control typeahead" name="username" type="text"
+                       placeholder="User Name"
+                       autocomplete="off" spellcheck="off"
+                       data-source="usernames"/>
+
+                <span id="x-error-icon" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <span id="error-msg" class="error-msg"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Invite</button>
+        </fieldset>
+    </form>
+
+
+</template>

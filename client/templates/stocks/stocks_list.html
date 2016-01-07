@@ -1,0 +1,80 @@
+<template name="stocksList">
+
+    <div class="cash-assets-total">
+        <span class="cash-total">Cash: {{cash}}$</span>
+        <span class="assets-total">Total: {{total}}$ (#{{myPosition}})</span>
+    </div>
+    <div class="stock-list-title text-center">{{sprintName}}</div>
+
+    {{#if hasStocks}}
+
+        <div id="stock_list_home" class="pure-g text-center bold">
+            <div class="pure-u-1-6"><p>Symbol</p></div>
+            <div class="pure-u-1-6"><p>Change</p></div>
+            <div class="pure-u-1-6"><p>Value</p></div>
+            <div class="pure-u-1-6"><p>Price</p></div>
+            <div class="pure-u-1-6"><p>Buy Price</p></div>
+            <div class="pure-u-1-6"><p>ROI ($)</p></div>
+
+            {{#each stocks}}
+                {{> gridStockItem}}
+            {{/each}}
+
+        </div>
+
+    {{/if}}
+
+    <div class="stock-list-buttons">
+
+        <span>
+            <button type="button" class="btn btn-success btn-xs buy">Buy</button>
+        </span>
+
+        {{#if hasStocks}}
+            <span>
+                <button type="button" class="btn btn-success btn-xs sell">Sell</button>
+             </span>
+        {{/if}}
+
+        <span>
+            <button id="invite-btn" type="button" class="btn btn-success btn-xs invite">Invite</button>
+        </span>
+
+        <span>
+            <button type="button" class="btn btn-info btn-xs transactions">Logs<span style="font-size:medium;"></span></button>
+        </span>
+
+
+    </div>
+
+    <!--div class="sprint-members-title">Sprint Members</div-->
+    <hr width="100%" style="margin: 40px 0 10px 0;">
+
+    <div class="members-stocks-area">
+        {{#each members}}
+            <div class="{{myColor}}">
+                <div class="member-in-team-details">
+                    <span class="member-in-team-name">{{ profile.username }} #{{position}}</span>
+                    <span class="member-in-team-total">Total: {{memberTotal}}$</span>
+                </div>
+                {{#unless memberHasStocks}}
+                    <div class="member-has-no-stocks text-center">
+                        <span> - {{ profile.username }}'s portfolio is empty - </span>
+                    </div>
+                {{/unless}}
+
+                <div class="pure-g text-center members-stocks-list">
+                    {{#each ustocks}}
+                        {{> gridStockItem}}
+                    {{/each}}
+                </div>
+                <hr width="100%">
+
+            </div>
+
+        {{/each}}
+
+    </div>
+
+
+</template>

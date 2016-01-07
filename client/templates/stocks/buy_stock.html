@@ -1,0 +1,74 @@
+<template name="buyStock">
+
+    <form class="create" autocomplete="off">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Buy Stock</legend>
+            <span class="starting-cash">Cash: {{startingCash}}</span>
+            <div class="form-group">
+                <input id="symbol-text" class="form-control typeahead" name="symbol" type="text"
+                       placeholder="Company Name"
+                       autocomplete="off" spellcheck="off"
+                       data-source="companies"/>
+                <div class="spinner-wrapper">
+                    <span style="display: block">Loading list... <i class="fa fa-spinner fa-spin stock-name-spinner"></i></span>
+                </div>
+                <span id="x-error-icon" class="glyphicon glyphicon-remove form-control-feedback new-stock"></span>
+                <span id="error-msg" class="error-msg new-stock"></span>
+                <div class="buy-stock-amount">
+                    <label for="group">Desirable Cost ($):</label>
+                    <input id="cost-text" pattern="[0-9]*" name="cost" type="number" value="{{cost}}" class="form-control" min="1" max="{{startingCash}}">
+                    <label for="group">Actual Cost ($):</label>
+                    <input id="actual-cost-text" name="actual-cost" type="number" value="{{actualCost}}" class="form-control" readonly>
+                    <label for="group">Number of Stocks:</label>
+                    <input id="amount-text" name="amount" type="number" value="{{amount}}" class="form-control" readonly>
+                    <label for="group">Cash Left:</label>
+                    <input id="cash-text" name="cash" type="number" value="{{cash}}" class="form-control" novalidate readonly>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Find<i class="fa fa-spinner fa-spin find-spinner"></i></button>
+
+            <button id="add-stock-btn" type="submit" class="btn btn-success">Buy<i class="fa fa-spinner fa-spin buy-spinner"></i></button>
+        </fieldset>
+    </form>
+
+    <form class="stock-details" autocomplete="off">
+        <div class="stock-details-item">
+            <label>Symbol:</label>
+            <a target="_blank" href="{{url}}" class= "form-control-static"> {{ symbol }}</a>
+        </div>
+
+        <div class="stock-details-item">
+            <label>Name:</label>
+            <span class= "form-control-static"> {{ name }}</span>
+        </div>
+
+        <div class="stock-details-item">
+            <label>Change Last Day:</label>
+            <span class= "form-control-static"> {{ change }}%</span>
+        </div>
+
+        <div class="stock-details-item">
+            <label>Price:</label>
+            <span class= "form-control-static"> {{ price }}$</span>
+        </div>
+
+        <div class="stock-details-item">
+            <label>Market Cap:</label>
+            <span class= "form-control-static"> {{ cap }}</span>
+        </div>
+
+        <div class="stock-details-item">
+            <label>Day Low:</label>
+            <span class= "form-control-static"> {{ dayLow }}</span>
+        </div>
+
+        <div>
+            <label>Day High:</label>
+            <span class= "form-control-static"> {{ dayHigh }}</span>
+        </div>
+
+        <hr width="100%">
+
+    </form>
+
+</template>

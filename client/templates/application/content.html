@@ -1,0 +1,111 @@
+<template name="content">
+
+    <div class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>k</b>ly</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Stock</b>ly</span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" id="moshe" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                </nav>
+            </header>
+
+
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                {{> yield}}
+            </div>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_400x400.png"
+                                 class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p class="profile-username">
+                                {{#if currentUser}}
+                                    {{currentUser.profile.username}}
+                                {{else}}
+                                    Stockly
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <!--li class="header">MAIN NAVIGATION</li-->
+                        <li class="active treeview">
+                            <a href="#">
+                                <i class="fa fa-tasks"></i> <span>Sprints</span> <i class="fa fa-pencil-square-o pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                {{#each sprintsList}}
+                                    <li><a href="#" tabindex="{{tab}}" id="{{id}}" class="sprint edit">{{name}}<i class="fa {{starKind}}"></i></a></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" id="new-sprint-btn">
+                                <i class="fa fa-plus"></i> <span>New Sprint</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" id="invite-btn">
+                                <i class="fa fa-plus"></i> <span>Invite</span>
+                            </a>
+                        </li>
+                        {{#if currentUser}}
+                            {{> logout}}
+                        {{/if}}
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            <!--footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.3.0
+                </div>
+                <strong>Copyright &copy; 2015 <a href="">Stockly</a>.</strong> All rights reserved.
+            </footer-->
+
+            <!-- Control Sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+                 immediately after the control sidebar -->
+        </div>
+        <!-- ./wrapper -->
+
+    </div>
+
+
+</template>
+
+
+<!--template name="content">
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <header></header>
+                        {{!> yield}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template-->

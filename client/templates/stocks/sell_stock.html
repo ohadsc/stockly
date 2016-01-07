@@ -1,0 +1,23 @@
+<template name="sellStock">
+    <div class="choose-stock-title text-center">Choose Stock to Sell</div>
+    <div class="container">
+        <div class="list-group">
+            <!--div class="choose-stock-to-sell">Choose stock to sell:</div-->
+            {{#each stocks}}
+                    <a class="list-group-item" style="cursor: pointer">
+                        <div class="radio" data-stock-id="1234">
+                            <label>
+                                <!--input id="inlineradio1" name="sampleinlineradio" value="option1" type="radio" style="top: 13px"-->
+                                <span style="display: inline-block; margin-left: 0px;">
+                                    <h4 class="list-group-item-heading">{{Name}}</h4>
+                                    <p style="display: inline" class="list-group-item-text">{{stockSymbol}}</p>
+                                </span>
+                            </label>
+                        </div>
+                    </a>
+            {{/each}}
+
+        </div>
+    </div>
+
+</template>

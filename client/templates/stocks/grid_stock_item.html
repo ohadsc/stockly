@@ -1,0 +1,10 @@
+<template name="gridStockItem">
+
+    <div class="pure-u-1-6"><a href="{{url}}" target="_blank" data-toggle="tooltip" title="{{Name}}">{{toUpperCase symbol}}</a></div>
+    <div class="pure-u-1-6 {{changeColorClass}}">{{ changeInPercent }}%</div>
+    <div class="pure-u-1-6">{{value}}$</div>
+    <div class="pure-u-1-6">{{currentPrice}}$</div>
+    <div class="pure-u-1-6">{{buy}}$</div>
+    <div class="pure-u-1-6 {{roiColorClass}}">{{roi}}</div>
+
+</template>

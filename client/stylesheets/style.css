@@ -1,0 +1,708 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+
+
+#wrapper.toggled {
+    padding-left: 0;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 0;
+}
+
+#page-content-wrapper {
+    padding: 20px;
+    position: relative;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+}
+
+.btn.btn-default.t-menu {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    background-image: url('/menu1.png');
+}
+
+.btn.btn-default.t-menu.logged {
+    background-image: url('/menu.png');
+}
+
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+}
+
+.btn-custom-width {
+    min-width: 170px;
+}
+
+.stock-list-buttons > span > .btn {
+    height: 30px;
+}
+
+div.stock-list-buttons > span > .btn.btn-success.btn-xs {
+    margin-left: 10px;
+}
+
+div.stock-list-buttons > span > .btn.btn-success.btn-xs.buy {
+
+}
+
+div.stock-list-buttons > span > .btn.btn-success.btn-xs.invite {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+div.stock-list-buttons > span > .btn.btn-info.btn-xs.transactions {
+    margin-left: 10px;
+}
+
+.dropdown-menu.center {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
+    float: left;
+    margin-right: 5px;
+}
+
+.dropdown.text-center.left {
+    margin-right: 8px;
+}
+
+#drop-down-wrapper {
+    margin: 0 auto;
+    height: 50px;
+}
+
+#sprints-dd,
+#groups-dd,
+#invite-btn-div {
+    display: inline-block;
+    float: left;
+    position: absolute;
+}
+
+#groups-dd {
+    left: 20%;
+}
+
+#sprints-dd {
+    left: 40%;
+}
+
+#invite-btn-div {
+    left: 60%;
+}
+
+.typeahead,
+.tt-query,
+.tt-hint {
+    width: 100%;
+    padding: 8px 12px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.typeahead {
+    background-color: #fff;
+}
+
+.typeahead:focus {
+    border: 2px solid #0097cf;
+}
+
+.tt-query {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #999;
+}
+
+.tt-menu {
+    width: 100%;
+    margin: 4px 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    display: none;
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+.twitter-typeahead {
+    width: 100%;
+}
+
+.stockly-title {
+    font-size: 50px;
+    color: white;
+}
+
+.choose-stock-title{
+    margin-bottom: 15px;
+}
+
+@media (min-width:992px) {
+    .desktop-only {
+        display: block !important;
+    }
+
+    #a_hamburger {
+        visibility: hidden;
+    }
+
+    .delete-stock {
+        top: 3px;
+        position: absolute;
+        right: 8px;
+    }
+
+    .stock-list-buttons > span > .btn {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .btn.btn-primary.btn-xs {
+        font-size: 17px;
+    }
+
+    .modal-dialog {
+        margin-top: 17%;
+    }
+
+    .choose-stock-title{
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .cash-assets-total{
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .stock-list-title{
+        font-size: 33px;
+    }
+
+    .member-has-no-stocks {
+        margin-top: 10px;
+    }
+
+    .user-personal-info {
+        text-indent: 115px;
+    }
+
+    .blue-background {
+        background-color: #E0FFFF;
+    }
+}
+
+@media (max-width: 991px) {
+    .mobile-only {
+        display: block !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    #drop-down-wrapper {
+        visibility: hidden;
+    }
+
+    .panel-login>.panel-heading a.active {
+        color: #125acd;
+    }
+
+    .stockly-title {
+        font-size: 30px;
+    }
+
+    .delete-stock {
+        top: -1px;
+        position: absolute;
+        right: -1px;
+    }
+
+    .stock-list-buttons > span > .btn {
+        width: 60px;
+        font-size: 14px;
+    }
+
+    .btn.btn-primary.btn-xs {
+        font-size: 15px;
+    }
+
+    .modal-dialog {
+        margin-top: 50%;
+    }
+
+    .choose-stock-title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    #stock_list_home{
+        font-size: 12px;
+    }
+
+    div.members-stocks-area > div > div.pure-g.members-stocks-list{
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    div.stock-list-buttons > span > .btn.btn-success.btn-xs.invite {
+        float: right;
+    }
+
+    .stock-list-title{
+        font-size: 28px;
+        margin-top: 25px;
+    }
+
+    .member-has-no-stocks {
+        margin-top: 25px;
+    }
+
+    .transaction_list{
+        font-size: 10px;
+    }
+
+    .blue-background {
+        background-color: white;
+    }
+
+    }
+
+/* iphone 6 */
+@media screen and (device-aspect-ratio: 375/667) {
+    #stock_list_home{
+        font-size: 10px;
+    }
+
+    div.members-stocks-area > div > div.members-stocks-list{
+        font-size: 10px;
+    }
+
+    .transaction_list{
+        font-size: 10px;
+    }
+}
+/* iphone 5 */
+@media screen and (device-aspect-ratio: 40/71) {
+    #stock_list_home{
+        font-size: 8px;
+    }
+
+    div.members-stocks-area > div > div.members-stocks-list{
+        font-size: 7px !important;
+    }
+
+    .transaction_list{
+        font-size: 8px;
+    }
+}
+
+.error-msg {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 2;
+    display: block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.stock-list-title {
+    line-height: 49px;
+    text-overflow: ellipsis;/* generates dots if text on one single line and truncated */
+    overflow: hidden;/* triggers text-oveflow and mids floatting elements */
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#add-stock-btn {
+    width: 100px;
+    margin-left: 10px;
+}
+
+label {
+    display: inline!important;
+}
+
+.glyphicon.glyphicon-remove.form-control-feedback.new-stock {
+    top: 64px;
+}
+
+.error-msg.new-stock {
+    top: 63px;
+}
+
+.error-msg.new-username{
+    right: 0px;
+}
+
+.error-msg.new-stock.already {
+    right: 0px;
+}
+
+.stock-details-item {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.last-stock-row {
+    position: relative;
+}
+
+.pure-u-1-6 {
+    padding-bottom: 5px;
+}
+
+.members-stocks-area {
+    margin-top: 0px;
+    width: 100%;
+}
+
+div.members-stocks-area > div > div> .member-in-team-name {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+div.members-stocks-area > div > div > .member-in-team-total {
+    font-size: 16px;
+    margin-bottom: 10px;
+    float: right;
+    font-weight: bold;
+}
+
+.sprint-members-title {
+    margin-top: 30px;
+}
+
+.find-spinner {
+    margin-top: 1px;
+    margin-left: 6px;
+    padding-top: 1px;
+    display: none;
+}
+
+.buy-spinner {
+    margin-left: 9px;
+}
+
+.modal-body {
+    font-size: 20px;
+}
+
+.buy-stock-amount{
+    margin-top: 10px;
+    display: none;
+}
+
+.starting-cash{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-weight: 800;
+}
+
+.choose-stock-to-sell{
+    color: gray;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+div.form-group > div.space-between-inputs {
+    margin-bottom: 5px;
+}
+
+div.form-group > div.space-between-inputs > .error-msg.sell-stock{
+    top: 138px;
+    right: 0px;
+}
+
+div.form-group > div.space-between-inputs > .form-control-feedback.sell-stock{
+    top: 138px;
+}
+
+.btn.btn-success.sell{
+    /*width: 100px;*/
+}
+
+.fist-item-sum{
+    display: inline-block;
+    width: 90px;
+}
+
+.cash-assets-total{
+    width: 100%;
+}
+
+div.cash-assets-total > span.cash-total {
+    float: left;
+    font-weight: bold;
+}
+
+div.cash-assets-total > span.assets-total {
+    float: right;
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+ul.treeview-menu > li > a.sprint {
+    width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+section.sidebar > div.user-panel > div.pull-left.info > p {
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.member-has-no-stocks {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+div.stock-list-buttons {
+    margin-top: 20px;
+}
+
+.user-personal-info {
+    margin-bottom: 20px;
+}
+
+.fa.fa-spinner.fa-spin.stock-name-spinner{
+    display: inline-flex !important;
+    width: 14px;
+    margin-top: 3px;
+    margin-left: 4px;
+
+}
+
+.spinner-wrapper {
+    position: absolute;
+    top: 71px;
+    right: 49px;
+}
+
+div.members-stocks-area > div > div.members-stocks-list{
+    width: 100%;
+}
+
+div.pure-g.text-center.bold > div.pure-u-1-6 > p {
+    font-weight: bold;
+}
+
+.userTransactions{
+    width: 100%;
+    font-weight: normal;
+}
+
+.transaction_list{
+    margin-top: 40px;
+}
+
+.fa.fa-star-o, .fa.fa-star {
+    position: absolute;
+    right: 0;
+}
+
+.change-password{
+    margin-bottom: 40px;
+}

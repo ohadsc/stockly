@@ -1,0 +1,17 @@
+<template name="layout">
+
+    <div id="wrapper" >
+
+        {{#if loggingIn}}
+            {{> spinner }}
+        {{/if}}
+        {{#if loggedOut}}
+            {{> login }}
+        {{/if}}
+        {{#if loggedIn}}
+            {{> content }}
+        {{/if}}
+
+    </div>
+
+</template>

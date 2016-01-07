@@ -1,0 +1,48 @@
+<template name="transactionList">
+
+    <div id="users-dd" class="dropdown text-center">
+        <button id="usersDropDownBtn" class="btn btn-default dropdown-toggle btn-custom-width"
+                type="button"
+                data-toggle="dropdown">Select User
+            <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu center users" role="menu" aria-labelledby="dLabel">
+            {{#each usersList}}
+                <li role="presentation">
+                    <a id="{{_id}}" role="menuitem" href="#">{{profile.username}}</a>
+                </li>
+            {{/each}}
+
+        </ul>
+    </div>
+
+    <div id="transaction_list" class="pure-g text-center transaction_list bold">
+        <div class="pure-u-1-8"><p>Action</p></div>
+        <div class="pure-u-1-8"><p>Symbol</p></div>
+        <div class="pure-u-1-8"><p>Date</p></div>
+        <div class="pure-u-1-8"><p>Stocks</p></div>
+        <div class="pure-u-1-8"><p>Price</p></div>
+        <div class="pure-u-1-8"><p>Buy Price</p></div>
+        <div class="pure-u-1-8"><p>Revenue</p></div>
+        <div class="pure-u-1-8"><p>Total</p></div>
+
+        <!--div class="pure-g text-center userTransactions" -->
+
+        {{#each userTransactions}}
+            <div class="pure-u-1-8">{{action}}</div>
+            <div class="pure-u-1-8"><a href="{{stock.url}}" target="_blank" data-toggle="tooltip" title="{{stock.Name}}">{{symbol}}</a></div>
+            <div class="pure-u-1-8">{{prettyDate}}</div>
+            <div class="pure-u-1-8">{{amount}}</div>
+            <div class="pure-u-1-8">{{price}}</div>
+            <div class="pure-u-1-8">{{buyPrice}}</div>
+            <div class="pure-u-1-8"><span class="{{color}}">{{revenue}}</span></div>
+            <div class="pure-u-1-8">{{userTotal}}</div>
+
+        {{/each}}
+
+        </div>
+
+    <!--/div-->
+
+</template>
